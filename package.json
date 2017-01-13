@@ -1,0 +1,37 @@
+{
+  "name": "hyperhealth-web",
+  "version": "1.0.0",
+  "description": "A simple website for [hyperhealth].",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon . -i client.js -i package.json -i models/* | garnish",
+    "test": "standard && tape test/*.js | tap-spec"
+  },
+  "author": "Joe Hand <joe@hand.email> (https://joeahand.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "choo": "^4.0.3",
+    "choo-log": "^3.0.0",
+    "choo-model": "^1.0.0",
+    "dat-encoding": "^4.0.1",
+    "hyperhealth": "^1.2.1",
+    "lru": "^3.1.0",
+    "merry": "^4.0.0",
+    "pretty-bytes": "^4.0.2",
+    "sheetify": "^6.0.1",
+    "tachyons": "^4.6.1",
+    "xhr": "^2.3.3"
+  },
+  "devDependencies": {
+    "bankai": "^5.2.1",
+    "nodemon": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joehand/hyperhealth-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joehand/hyperhealth-web/issues"
+  },
+  "homepage": "https://github.com/joehand/hyperhealth-web#readme"
+}
