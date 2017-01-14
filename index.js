@@ -24,13 +24,16 @@ app.router([
   ['/', function (req, res, ctx, done) {
     done(null, assets.html(req, res))
   }],
+  ['/:key', function (req, res, ctx, done) {
+    done(null, assets.html(req, res))
+  }],
   ['/bundle.js', (req, res, ctx, done) => {
     done(null, assets.js(req, res))
   }],
   ['/bundle.css', (req, res, ctx, done) => {
     done(null, assets.css(req, res))
   }],
-  ['/health/:key', getHealth]
+  ['/api/:key', getHealth]
 ])
 
 app.listen(env.PORT)
@@ -48,7 +51,7 @@ function getHealth (req, res, ctx, done) {
   const results = health.get()
   if (results) return done(null, results)
 
-  req.setTimeout(500, () => {
+  req.setTimeout(2000, () => {
     // May need to wait for content to populate on new healths
     if (results) return done(null, results)
     done(error({statusCode: 500, message: 'Could not get health?'}))
