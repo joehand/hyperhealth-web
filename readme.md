@@ -2,7 +2,7 @@
 
 A simple website for showing [hyperhealth](https://github.com/karissa/hyperhealth) status on a Dat link.
 
-
+![screenshot](https://raw.githubusercontent.com/joehand/hyperhealth-web/master/screenshot.png)
 
 ## Usage
 
