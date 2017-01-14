@@ -24,7 +24,7 @@ function mainView (state, prev, send) {
 
   return html`
     <body class="">
-      <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+      <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
       ${header(state, prev, send)}
       <main>
         <article class="vh-75 dt w-100">

@@ -62,7 +62,7 @@ function healthView (state, prev, send) {
 
   return html`
     <body class="">
-      <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+      <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
       ${header(state, prev, send)}
       <main>
         <section class="w-75 center tc pt4 pb3">
