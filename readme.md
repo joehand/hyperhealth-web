@@ -1,6 +1,6 @@
 # hyperhealth website
 
-A simple website for showing [hyperhealth](https://github.com/karissa/hyperhealth) status on a Dat link.
+A simple website for showing [hyperhealth](https://github.com/karissa/hyperhealth) status on a Dat link using localcast.
 
 ![screenshot](https://raw.githubusercontent.com/joehand/hyperhealth-web/master/screenshot.png)
 
@@ -11,13 +11,7 @@ Visit on the web at [TBD]().
 ### Development
 
 * Run `npm start` to run a local copy for development.
-* Run `npm run server` to run the server for hosting.
-
-## TODO
-
-* Make compatible with hypercore feeds!
-* Better landing page?
-* Add countdown timer for updates
+* Run `hyperhealth <key>` to start localcast on some archive
 
 ## License
 
