@@ -4,30 +4,23 @@
   "description": "A simple website for hyperhealth.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon . -i client.js -i package.json -i models/* | merry",
-    "server": "node index.js | merry"
+    "build": "bankai build -O",
+    "test": "standard",
+    "start": "bankai start index.js --open"
   },
   "author": "Joe Hand <joe@hand.email> (https://joeahand.com/)",
   "license": "MIT",
   "dependencies": {
-    "cache-element": "^2.0.1",
-    "choo": "^4.0.3",
-    "choo-log": "^3.0.0",
-    "choo-model": "^1.0.0",
-    "dat-encoding": "^4.0.1",
-    "hyperhealth": "^1.2.1",
-    "lru": "^3.1.0",
-    "merry": "^4.0.0",
+    "choo": "^5.0.0-5",
+    "localcast": "^2.0.1",
     "pixel-grid": "^1.0.2",
     "pretty-bytes": "^4.0.2",
     "pretty-hash": "^1.0.1",
     "sheetify": "^6.0.1",
-    "tachyons": "^4.6.1",
-    "xhr": "^2.3.3",
-    "bankai": "^5.2.1"
+    "tachyons": "^4.6.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "bankai": "^5.4.0"
   },
   "repository": {
     "type": "git",
