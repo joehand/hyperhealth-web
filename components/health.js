@@ -1,6 +1,5 @@
 'use strict'
 
-const choo = require('choo')
 const html = require('choo/html')
 const css = require('sheetify')
 const prettyBytes = require('pretty-bytes')
@@ -52,8 +51,6 @@ css`
 
 module.exports = healthView
 
-const grids = []
-
 function healthView (state, emit) {
   if (!state.connected || !state.data) return ''
 
@@ -80,13 +77,24 @@ function statusMsg (state) {
 function healthDisplay (state) {
   if (!state.data) return ''
   const health = state.data
+  const completedPeers = health.peers.filter(peer => {
+    return peer.have === peer.blocks
+  })
+  const peers = health.peers.sort((a, b) => {
+    return parseFloat(a.have) - parseFloat(b.have)
+  })
+
   return html`
   <div>
     <article class="cf ph1">
       <div class="fl w-100 w-40-ns pl5">
-        <dl class="db w-auto-l lh-title">
-          <dd class="f6 fw4 ml0">Connected Peers</dd>
-          <dd class="f2 f-subheadline-l fw6 ml0">${health.peers.length}</dd>
+        <dl class="dib w-40 lh-title">
+          <dd class="f6 fw4 ml0">Total Peers</dd>
+          <dd class="f2 f-subheadline-l fw6 ml0">${peers.length}</dd>
+        </dl>
+        <dl class="dib w-40 lh-title">
+          <dd class="f6 fw4 ml0">Completed Peers</dd>
+          <dd class="f2 f-subheadline-l fw6 ml0">${completedPeers.length}</dd>
         </dl>
         <dl class="db w-auto-l lh-title">
           <dd class="f6 fw4 ml0">Total Size</dd>
@@ -100,7 +108,7 @@ function healthDisplay (state) {
       </div>
       <div class="fl w-100 w-60-ns tc">
         ${health.peers.map((peer, i) => {
-          const prog = peer.have * 100/peer.blocks
+          const prog = peer.have * 100 / peer.blocks
           return circle(prog)
         })}
       </div>
