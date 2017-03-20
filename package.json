@@ -4,7 +4,7 @@
   "description": "A simple website for hyperhealth.",
   "main": "index.js",
   "scripts": {
-    "build": "bankai build -O",
+    "build": "bankai build -O index.js dist/",
     "test": "standard",
     "start": "bankai start index.js --open"
   },

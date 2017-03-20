@@ -1,6 +1,5 @@
 'use strict'
 
-const choo = require('choo')
 const html = require('choo/html')
 const css = require('sheetify')
 const prettyBytes = require('pretty-bytes')
@@ -51,8 +50,6 @@ css`
 `
 
 module.exports = healthView
-
-const grids = []
 
 function healthView (state, emit) {
   if (!state.connected || !state.data) return ''
@@ -111,7 +108,7 @@ function healthDisplay (state) {
       </div>
       <div class="fl w-100 w-60-ns tc">
         ${health.peers.map((peer, i) => {
-          const prog = peer.have * 100/peer.blocks
+          const prog = peer.have * 100 / peer.blocks
           return circle(prog)
         })}
       </div>
